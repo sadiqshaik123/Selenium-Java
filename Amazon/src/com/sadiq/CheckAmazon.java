@@ -17,6 +17,12 @@ public class CheckAmazon {
 		search.submit();
 		Thread.sleep(2000);
 		Windows();
+		
+		String str="//*[@id=\"search\"]/div[1]/div[1]/div/span[1]/div[1]/div[5]/div/div/span/div/div/div/div[2]/div/div/div[3]/div[1]/div/div[1]/div[2]/div[1]/a/span/span[2]/span[2]";
+		WebElement priceElement = driver.findElement(By.xpath(str));
+		String priceText = priceElement.getText();
+		System.out.println("Price: " + priceText);
+	
 		WebElement selectingphone=driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[1]/div[1]/div[5]/div/div/span/div/div/div/div[2]/div/div/div[1]/h2/a"));
 		selectingphone.click();
 		Thread.sleep(2000);
